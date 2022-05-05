@@ -1,0 +1,140 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: auto;
+}
+#arthead
+{
+    background-color: blanchedalmond;
+}
+#comments
+{
+    background-color: blanchedalmond;
+    padding: 1% 4%;
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+
+#topnav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0px;
+    min-height: 40px;
+}
+
+*{margin: 0px; padding: 0px; }
+            #topnav{ width:100%; position: fixed; top:0;}
+            #footer{box-sizing: border-box; position:fixed; bottom:0; background-color: #303438; text-align: right; color: white; padding: 0.2% 1%; height: 30px; width: 100%;}
+            #footer p{font-size: 15px;}
+
+
+
+#listofpost
+{
+    background-color: blanchedalmond;
+    display: flex;
+    flex-wrap:wrap;
+}
+#listofpost .post
+{
+    margin: 0% .5%;
+}
+#friendlist
+{
+    display: flex;
+    flex-basis: auto;
+    justify-content: space-evenly;
+}
+
+#posttext
+{
+    padding: 0% 10%;
+    text-align: center;
+}
+.accordion-body
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.accordion-body .card
+{
+    flex-basis: 20%;
+
+}
+#maincontent
+{
+    padding: 2.5% 0%;
+}
+
+#maincontent div ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#subnav .subnavitem a
+{
+    color: #303438;
+    display: block;
+    width: 100%;
+    padding: 3% 10%;
+    text-decoration: none;
+}
+
+#mainpart
+{
+    flex: 4;
+    box-sizing: border-box;
+}
+#uploading .card-header, #uploading .card-body
+{
+    padding-left:4%;
+    padding-right: 4%;
+}
+#uploading .card-body
+{
+    background-color: blanchedalmond;
+}
+#dashtop
+{
+    background-color: blanchedalmond;
+    padding: 2% 4%;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#subcontent
+{
+    flex: 5;
+    min-width: 85%;
+    padding: 1%;
+    text-align: justify;
+    overflow-x: scroll;
+}
+
+#topnav
+{
+    padding: 0px;
+    border: 1px solid bisque;
+}
+#topnav span
+{
+    padding: 0px;
+}
+
+
+
+
+
+
+table
+{
+    border: 1px solid bisque;
+}
+#maincontent .halfofhalf
+{
+    width: 25%;
+}

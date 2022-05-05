@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Project | Articles</title>
+{% endblock title %}
+
+{% block mainbody %}
+<div id="maincontent">
+
+  <div class="card">
+    <div class="card-header">
+      <b>Latest Articles</b>
+    </div>
+    <div class="card-body" id="listofpost">
+      {% for latest in latestarticles %}
+      <div class="post">
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            {{latest[8]}}<font color="violet"> -{{latest[9]}}</font>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{latest[1] | truncate(30)}}</h5> <!-- post title -->
+            <p class="card-text">{{latest[2] | truncate(100)}}</p>  <!-- post -->
+            <font color="seagreen"><i>{{latest[6]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></font>
+            <a href="/read/{{latest[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+  </div> 
+
+
+  <div class="card">
+    <div class="card-header">
+      <b>All Posted Articles</b>
+    </div>
+    <div class="card-body" id="listofpost">
+      {% for art in allarticles %}
+      <div class="post">
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            {{art[8]}}<font color="violet"> - {{art[9]}}</font>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{art[1] | truncate(30)}}</h5> <!-- post title -->
+            <p class="card-text">{{art[2] | truncate(100)}}</p>  <!-- post -->
+            <font color="seagreen"><i>{{art[6]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></font>
+            <a href="/read/{{art[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+</div>
+
+
+
+{% endblock mainbody %}

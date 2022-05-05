@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>My Project | Article</title>
+{% endblock %}
+
+{% block mainbody %}
+
+<div id="maincontent">
+  {% for data in details %}
+    <div class="card text-center" id="arthead">
+        <div class="card-body">
+        <h4 class="card-title">{{data[1]}}</h4>
+        <p>Total Likes : {{data[3]}}<br>Total dislikes : {{data[4]}}</p>
+        <a href="/likearticle/{{data[0]}}"><i style="font-size:24px" class="fa">&#xf087;</i></a>&nbsp;&nbsp;&nbsp;
+        <a href="/dislikearticle/{{data[0]}}"><i style="font-size:24px" class="fa">&#xf088;</i></a>
+        </div>
+    </div>
+    
+    <div class="card text-center">
+      <div class="card-header">
+        <font color="seagreen"><b>{{data[8]}}</b> - &nbsp;{{data[9]}}</font>
+      </div>
+      <div class="card-body">
+        <p class="card-text" id="posttext"> {{data[2]}}</p>
+      </div>
+      <br><br>
+      <div class="card-footer text-muted">
+        <font color="seagreen"><b>Dated </b>- {{data[6]}}</font>
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+  
+{% endblock mainbody %}

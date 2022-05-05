@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Project | Dashboard</title>
+{% endblock title %}
+
+{% block mainbody %}
+<div id="maincontent">
+  {% for user in userdetails %}
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">{{user[1]}}</h5>
+      <p><b>{{user[2]}}</b><br><br>Followers : {{followers[0]}} &nbsp;|&nbsp; Following : {{following[0]}}</p>
+      <p>Total Likes : {{likes[0]}}<br>Total dislikes : {{dislike[0]}}</p>
+    </div>
+  </div>
+  {% endfor %}
+  
+
+  <div class="card">
+    <div class="card-header">
+      <b>Posts by You</b>
+    </div>
+  
+    <div class="card-body" id="listofpost">
+        {% for post in postdetails %}
+        <div class="post">
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">
+            <i style="font-size:24px" class="fa">&#xf087;</i>&nbsp; {{post[3]}} &nbsp;
+            <i style="font-size:24px" class="fa">&#xf088;</i>&nbsp; {{post[4]}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{post[1] | truncate(30)}}</h5> <!-- post title -->
+            <p class="card-text">{{post[2] | truncate(100)}}</p>  <!-- post -->
+            <a href="/read/{{post[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+           <br><br>{{post[6]}}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock mainbody %}

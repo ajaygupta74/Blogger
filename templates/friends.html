@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Project | Friends</title>
+{% endblock title %}
+
+{% block mainbody %}
+  
+<div id="maincontent">
+  
+
+
+<div class="card">
+  <div class="card-header">
+    <b>Your Friends</b>
+  </div>
+  <div class="card-body" id="listofpost">
+    {% for foll in following %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{foll[3]}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{foll[4]}}</h6>
+        <a href="/myfriend/{{foll[2]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+        <a href="/removefriend/{{foll[2]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf00d;</i></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <b>Explore more Bloggers</b>
+  </div>
+  <div class="card-body" id="listofpost">
+    {% for exp in explore %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{exp[1]}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{exp[2]}}</h6>
+        <a href="/myfriend/{{exp[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+        <a href="/addfriend/{{exp[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf2b5;</i></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+{% endblock mainbody %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Project | Dashboard</title>
+{% endblock title %}
+
+{% block mainbody %}
+<div id="maincontent">
+
+<div class="card" >
+  <div class="row" id="dashtop">
+    <div class="col-6">
+      <div class="card-body">
+        {% for user in userdetails %}
+        <h5 class="card-title"><font color="seagreen"><b>Welcome back {{user[1]}}</b></font></h5>
+        <p><font color="gray" size="4">{{user[2]}}</font><br><br>Followers : {{followers[0]}} &nbsp;|&nbsp; Following : {{following[0]}}</p>
+        <p>Total Likes : {{likes[0]}}<br>Total dislikes : {{dislike[0]}}</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="col-8">
+        <div class="card">
+          <div class="card-body">
+            <form method="POST" id="editprofile">
+              <div class="mb-3">
+                <input class="form-control form-control-sm" name="fullname" type="text" placeholder="Full Name" aria-label=".form-control-sm example">
+              </div>
+              <div class="mb-3">
+                <input class="form-control form-control-sm" name="password1" type="password" placeholder="New Password" aria-label=".form-control-sm example">
+              </div>
+              <div class="mb-3">
+                <input class="form-control form-control-sm" name="password2" type="password" placeholder="confirm Password" aria-label=".form-control-sm example">
+              </div>
+              <input type="submit" name="action" value="Update Profile" class="btn btn-primary btn-sm">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card" id="uploading">
+  <div class="card-header">
+    <b>Speak Your Mind</b>
+  </div>
+  <div class="card-body">
+    <form method="POST" id="publisharticle">
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Title if the Blog</span>
+        <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"></textarea>
+        <label for="floatingTextarea2">Write something here ...</label>
+      </div>
+      <input type="submit" name="action" value="Publish" class="btn btn-primary btn-sm">
+    </form>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <b>Blogs by You</b>
+  </div>
+
+  <div class="card-body" id="listofpost">
+      {% for post in postdetails %}
+      <div class="post">
+      <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <i style="font-size:24px" class="fa">&#xf087;</i>&nbsp; {{post[3]}} &nbsp;
+          <i style="font-size:24px" class="fa">&#xf088;</i>&nbsp; {{post[4]}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post[1] | truncate(30)}}</h5> <!-- post title -->
+          <p class="card-text">{{post[2] | truncate(100)}}</p>  <!-- post -->
+          
+          <a href="/read/{{post[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf06e;</i></a>
+          <a href="/editarticle/{{post[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf040;</i></a>
+          <a href="/deletearticle/{{post[0]}}" class="card-link"><i style="font-size:24px" class="fa">&#xf00d;</i></a>
+          
+          <br><br>{{post[6]}}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      
+  </div>
+  
+</div>
+
+
+  
+</div>
+
+{% endblock mainbody %}

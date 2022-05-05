@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>My Project | Edit Article</title>
+{% endblock title %}
+
+{% block header %}
+{% endblock header %}
+
+{% block mainbody %}
+<div id="maincontent">
+<div class="card" id="uploading">
+  <div class="card-header">
+    <b>Edit Your Blog</b>
+  </div>
+  {% for data in details %}
+  <div class="card-body">
+    <form method="POST" id="publisharticle">
+      <div class="input-group">
+        <span class="input-group-text">Title of the Post</span>
+        <textarea name="title" class="form-control" aria-label="With textarea" style="height: 70px">{{data[1]}}</textarea>
+      </div><br>
+      <div class="input-group">
+        <textarea name="description" class="form-control" aria-label="With textarea" style="height: 300px">{{data[2]}}</textarea>
+      </div><br>
+      <input type="submit" name="action" value="Update Blog" class="btn btn-primary btn-sm">
+    </form>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock mainbody %}

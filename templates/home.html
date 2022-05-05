@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- title -->
+        <title>Blogger | Home</title>
+        <!-- Bootstarp Css-->
+        <style>
+#logo{margin: 0% 4% 0% 4%; color: seagreen; font-size: 1.75em; font-weight: bold; }
+#topnav nav{padding: 0px;}
+#main{background-color: blanchedalmond; box-sizing:border-box; display:flex; max-height:100%; padding: 7.5% 10% 5% 5%;}
+#main #left{flex:2; padding: 5% 4% 5% 4%; background-color: #fdfbf9; border-radius: 10px; box-shadow: 1px 1px 10px 1px gray;}
+#main #right{flex:5; padding: 0% 7.5% 0% 0%; text-align: left; color:#303438; line-height: 30px;}
+#main #right p{padding: 0% 15% 0% 15%;}
+#main #left p{ font-size: 0.8em; color:gray; }
+
+
+        </style>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ 
+    </head>
+
+<body>
+    
+
+    <div id="topnav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/" id="logo"><img height="40px" width="40px" src="{{url_for('static',filename='logo.png' )}}">&nbsp;&nbsp;Blogger</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-1 mb-sm-0">
+                </ul>
+                <form class="d-flex" method="POST" value="login" name="login">
+                    <input class="form-control me-1" name = "emailid" type="email" placeholder="Email-id" aria-label="Search">
+                    <input class="form-control me-1" name = "password" type="password" placeholder="Password" aria-label="Search">
+                  <input class="btn btn-primary btn-sm" name="action" data-toggle="modal" data-target="#exampleModal" type="submit" value="Login">
+                </form>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+
+
+    <div id="main">
+        <div id="right">
+            <center>
+            <h3>Welcome to Your Blogger</h3>
+            <br>
+            <img src="{{url_for('static',filename='banner.png' )}}"><br><br>
+            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before t
+                 document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before t
+            </p><br>
+            </center>
+        </div>
+
+        <div id="left">
+            <form id="signup" method="POST">
+                <h4>Signup</h4>
+                <br>
+                <div class="input-group mb-3">
+                    <input type="text" name="fullname" placeholder="Full Name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="emailid" placeholder="Email-id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>                
+                <div class="input-group mb-3">
+                    <input type="password" name="password1" placeholder="Create Password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password2" placeholder="Confirm Password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <input type="submit" name="action" value="Confirm and Signup" class="btn btn-primary btn-sm">
+                <br><br>
+                <p>
+                    g and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before t document or a typeface without relying on
+                </p>
+            </form>
+        </div>
+        
+    </div>
+
+    <div id="footer">
+        <p>Developed by the student of ITM Aligarh</p>
+    </div>
+    <!-- Bootstrap Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
